@@ -1,0 +1,339 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #0a192f;
+    --bg-darker: #060e1d;
+    --text-color: #ccd6f6;
+    --text-muted: #8892b0;
+    --accent-color: #64ffda;
+    --accent-hover: #45e0be;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(10, 25, 47, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10vw;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.greeting {
+    color: var(--accent-color);
+    font-family: monospace;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    min-height: 60px;
+}
+
+.cursor {
+    color: var(--accent-color);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.bio {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.primary-btn {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.primary-btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-muted);
+}
+
+.secondary-btn:hover {
+    border-color: var(--text-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Sections --- */
+.section {
+    padding: 100px 10vw;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--text-muted);
+    margin-left: 20px;
+    opacity: 0.3;
+}
+
+/* --- Projects --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #112240;
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.2);
+}
+
+.project-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.project-tags {
+    color: var(--accent-color);
+    font-family: monospace;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.project-info p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.project-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: var(--accent-color);
+}
+
+.status {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* --- Skills --- */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-category h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.skill-category ul {
+    list-style-type: none;
+}
+
+.skill-category li {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skill-category li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* --- Experience Timeline --- */
+.timeline {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -37px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.timeline-item h3 {
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.timeline-item h4 {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.timeline-item p {
+    color: var(--text-muted);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--bg-darker);
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.copyright {
+    margin-top: 50px;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    nav { padding: 20px; }
+    .nav-links { display: none; } /* Hide nav on mobile for simplicity */
+    .hero h1 { font-size: 40px; }
+    .hero h2 { font-size: 24px; }
+    .hero-buttons { flex-direction: column; }
+}
